@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Special+Gothic+Expanded+One&display=swap');
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -71,6 +74,7 @@ ul{
  gap: 70px;
  cursor: pointer;
  font-weight: 500;
+ margin-right: 36px;
 }
 
 .navbar img{
@@ -79,4 +83,60 @@ ul{
 
 .navbar .active{
   color: #555;
+}
+
+
+
+
+
+
+/* ======================Hero======================= */
+
+
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #93254A, #000B26, #0B454E);
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 65px;
+}
+
+.text-content {
+  font-family: "Special Gothic Expanded One";
+  font-weight: 700;
+  font-size: 4.5em;
+  margin: 0;
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.line-combo {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.with-text{
+  font-family: "Special Gothic Expanded One";
+  font-size: 1.5em;
+  margin: 0;
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.next-text{
+  font-family: "Special Gothic Expanded One";
+  margin-top: ; 
 }
