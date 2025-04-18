@@ -56,6 +56,20 @@ ul{
 
 
 
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation-name: fadeUp;
+}
+
+
+
+
 
 /* ==============NAVBAR================= */
 
@@ -150,7 +164,7 @@ ul{
 }
 
 .titlesection {
-  height: 80vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,3 +179,69 @@ ul{
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
+
+
+
+/* ======================Journey======================= */
+
+.journey-container {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.journey-title {
+  font-size: 2rem;
+  margin-bottom: 90px;
+  font-weight: bold;
+}
+
+.journey-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.journey-line-container {
+  position: relative;
+  height: 4px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.journey-line {
+  height: 4px;
+  width: 0%;
+  background-color: black;
+  transition: width 1.5s ease-in-out;
+}
+
+.line-animate {
+  width: 100%;
+}
+
+.journey-card-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  top: -40px; /* Lift cards above the line */
+  padding: 0 10px;
+}
+
+.journey-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.6s forwards;
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  width: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+}
+
+.journey-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
