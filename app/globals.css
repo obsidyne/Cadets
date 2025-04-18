@@ -96,6 +96,7 @@ ul{
 
 .hero {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 90vh;
@@ -104,11 +105,19 @@ ul{
 .hero-text {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  margin-left: 65px;
+  margin-bottom: 5rem;
+  /* Set the gradient on the container */
   background: linear-gradient(to right, #93254A, #000B26, #0B454E);
   background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /* Make sure the background is visible through the text */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-left: 65px;
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
 }
 
 .text-content {
@@ -116,10 +125,14 @@ ul{
   font-weight: 700;
   font-size: 4.5em;
   margin: 0;
-  background: inherit;
+  /* Remove background from text, inherit from parent */
+  background: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
+
 
 .line-combo {
   display: flex;
@@ -131,12 +144,24 @@ ul{
   font-family: "Special Gothic Expanded One";
   font-size: 1.5em;
   margin: 0;
-  background: inherit;
+  /* background: inherit; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.next-text{
+.titlesection {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titletext {
   font-family: "Special Gothic Expanded One";
-  margin-top: ; 
+  font-size: 2em;
+  background: linear-gradient(to right, #93254A, #000B26, #0B454E);
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
