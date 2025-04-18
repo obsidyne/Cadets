@@ -68,7 +68,11 @@ ul{
 }
 
 
-
+@keyframes marq {
+  to{
+    transform: translateX(-100%);
+  }
+}
 
 
 /* ==============NAVBAR================= */
@@ -240,8 +244,81 @@ ul{
   text-align: center;
 }
 
+.journey-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
 .journey-card h3 {
   margin-bottom: 8px;
   font-size: 1.1rem;
 }
 
+
+
+/* ============Marquee============ */
+
+.marquee-container{
+  font-size: 15px;
+  width: 100%;
+  padding: 8px 0px;
+  border-block: solid 1px black;
+  align-items: center;
+  user-select: none;
+  overflow: hidden;
+  display: flex;
+}
+
+.marquee-text{
+  flex-shrink: 0;
+  margin: 0;
+  display: flex;
+  min-width: 100%;
+  animation: marq 20s linear infinite;
+}
+
+
+
+/* =================Mission Vision==============*/
+
+.mission-vision {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+  width: 100%;
+  margin: 50px auto; /* Adds space above and below the entire container */
+  padding: 50px 0px; /* Optional: You can keep padding to adjust the space inside the container */
+}
+
+.mission, .vision, .history {
+  flex: 1;
+  padding: 20px;
+}
+
+.mission, .vision, .history h3 {
+  margin-bottom: 10px;
+}
+
+.mission-vision > div:not(:last-child) {
+  border-right: 2px solid #ccc;
+}
+
+.mission-vision > div {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.6s forwards;
+}
+
+.mission-vision > div:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.mission-vision > div:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.mission-vision > div:nth-child(3) {
+  animation-delay: 0.8s;
+}
