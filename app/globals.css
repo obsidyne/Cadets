@@ -57,16 +57,15 @@ ul{
 
 
 @keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-.fade-up {
-  animation-name: fadeUp;
-}
-
 
 @keyframes marq {
   to{
@@ -162,7 +161,6 @@ ul{
   font-family: "Special Gothic Expanded One";
   font-size: 1.5em;
   margin: 0;
-  /* background: inherit; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -175,6 +173,7 @@ ul{
 }
 
 .titletext {
+  margin-top: 50px;
   font-family: "Special Gothic Expanded One";
   font-size: 2em;
   background: linear-gradient(to right, #93254A, #000B26, #0B454E);
@@ -184,77 +183,87 @@ ul{
   text-align: center;
 }
 
+.titlesection.parallax {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-text.parallaxw{
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+  position: relative;
+}
+
+
 
 
 /* ======================Journey======================= */
 
-.journey-container {
+
+.journey-section {
   padding: 80px 20px;
   text-align: center;
+  position: relative;
 }
 
 .journey-title {
   font-size: 2rem;
-  margin-bottom: 90px;
   font-weight: bold;
+  margin-bottom: 80px;
 }
 
-.journey-wrapper {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.journey-line-container {
-  position: relative;
+/* Line wrapper and animation */
+.journey-line-wrapper {
+  position: absolute;
+  top: 220px;
+  left: 100px;
+  width: 85%;
   height: 4px;
-  background: transparent;
   overflow: hidden;
+  z-index: 0;
 }
 
 .journey-line {
   height: 4px;
-  width: 0%;
-  background-color: black;
-  transition: width 1.5s ease-in-out;
+  width: 0;
+  background-color: #000;
+  transition: width 2.5s ease-in-out;
 }
 
 .line-animate {
   width: 100%;
 }
 
-.journey-card-container {
-  position: relative;
+/* Card container */
+.journey-card-list {
   display: flex;
-  justify-content: space-between;
-  top: -40px; /* Lift cards above the line */
-  padding: 0 10px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  top: -40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
+/* Cards */
 .journey-card {
   opacity: 0;
   transform: translateY(40px);
-  animation: fadeUp 0.6s forwards;
-  background-color: white;
+  background: #fff;
   border-radius: 12px;
-  padding: 16px;
+  padding: 20px;
   width: 180px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
   text-align: center;
+  animation: none;
 }
 
-.journey-card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+.card-animate {
+  animation: fadeUp 0.6s ease-out forwards;
 }
-
-.journey-card h3 {
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-}
-
 
 
 /* ============Marquee============ */
@@ -268,6 +277,7 @@ ul{
   user-select: none;
   overflow: hidden;
   display: flex;
+  
 }
 
 .marquee-text{
@@ -288,8 +298,8 @@ ul{
   align-items: stretch;
   text-align: center;
   width: 100%;
-  margin: 50px auto; /* Adds space above and below the entire container */
-  padding: 50px 0px; /* Optional: You can keep padding to adjust the space inside the container */
+  margin: 50px auto;
+  padding: 50px 0px;
 }
 
 .mission, .vision, .history {
@@ -297,7 +307,7 @@ ul{
   padding: 20px;
 }
 
-.mission, .vision, .history h3 {
+.mission-vision h3 {
   margin-bottom: 10px;
 }
 
@@ -305,20 +315,41 @@ ul{
   border-right: 2px solid #ccc;
 }
 
-.mission-vision > div {
+/* Parent animation setup */
+.mission-vision {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.mission-vision.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Child fade-ins with delay */
+.fade-child {
   opacity: 0;
   transform: translateY(40px);
-  animation: fadeUp 0.6s forwards;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.mission-vision > div:nth-child(1) {
-  animation-delay: 0.2s;
+.mission-vision.fade-in .fade-child:nth-child(1) {
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.mission-vision > div:nth-child(2) {
-  animation-delay: 0.5s;
+.mission-vision.fade-in .fade-child:nth-child(2) {
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.mission-vision > div:nth-child(3) {
-  animation-delay: 0.8s;
+.mission-vision.fade-in .fade-child:nth-child(3) {
+  transition-delay: 0.8s;
+  opacity: 1;
+  transform: translateY(0);
 }
+
+
