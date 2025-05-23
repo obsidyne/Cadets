@@ -12,7 +12,7 @@ export default function Mission() {
         if (entry.isIntersecting) {
           setIsVisible(true);
         } else {
-          setIsVisible(false); // Reset animation when it's out of view
+          setIsVisible(false);
         }
       },
       { threshold: 0.1 }

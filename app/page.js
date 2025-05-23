@@ -1,11 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+
 import Hero from "./components/Hero";
 
 import Spline from '@splinetool/react-spline/next';
 import Journey from "./components/Journey";
 import Marquee from "./components/Marquee";
 import Mission from "./components/Mission";
+import Gallery from "./components/Gallery";
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
         <Hero />
         <Mission />
         <Marquee />
+        <Gallery />
         <Journey />
       </main>
   );
