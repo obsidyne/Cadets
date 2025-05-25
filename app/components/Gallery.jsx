@@ -3,8 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 
 
-const Gallery = () => {
-  // Sample gallery images (replace with your actual images)
+const Gallery = React.forwardRef((props, ref) => {
   const allImages = [
     { id: 1, src: '/gallery/img1.jpg', alt: 'Gallery img 1' },
     { id: 2, src: '/gallery/img2.jpg', alt: 'Gallery img 2' },
@@ -38,7 +37,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="gallery-section">
+    <section ref={ref} className="gallery-section">
       <div className="gallery-container">
         <h2 className="gallery-heading">Our Gallery</h2>
         
@@ -57,16 +56,13 @@ const Gallery = () => {
         </div>
         
         <div className="gallery-button-container">
-          <button
-            onClick={loadMoreImages}
-            className="gallery-view-more-button"
-          >
+          <button onClick={loadMoreImages} className="gallery-view-more-button">
             View More
           </button>
         </div>
       </div>
     </section>
   );
-};
+});
 
 export default Gallery;

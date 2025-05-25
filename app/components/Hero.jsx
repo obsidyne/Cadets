@@ -1,7 +1,8 @@
 'use client';
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import Spline from '@splinetool/react-spline/next';
 
-export default function Hero() {
+const Hero = React.forwardRef((props, ref) => {
   const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
@@ -12,7 +13,7 @@ export default function Hero() {
 
   return (
     <>
-      <div className="hero">
+      <div ref={ref} className="hero">
         <div
           className="hero-text parallax"
           style={{
@@ -42,4 +43,6 @@ export default function Hero() {
       </div>
     </>
   );
-}
+});
+
+export default Hero

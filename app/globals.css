@@ -10,6 +10,7 @@
 
 html, body {
   height: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -270,7 +271,7 @@ ul{
 
 .marquee-container {
   font-size: 15px;
-  width: 100vw;
+  width: 99.5vw;
   padding: 8px 0;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -364,9 +365,11 @@ ul{
 
 
 .footer-box {
+  position: relative;
+  left: -160px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  width: 100%;
+  width: 99.5vw;
   background-color: #111;
   color: #eee;
   padding: 2rem;
@@ -504,7 +507,7 @@ ul{
 
 .gallery-view-more-button {
   padding: 12px 24px;
-  background-color: #2563eb;
+  background-color: black;
   color: white;
   font-weight: 500;
   border-radius: 8px;
@@ -515,5 +518,5 @@ ul{
 }
 
 .gallery-view-more-button:hover {
-  background-color: #1d4ed8;
+  background-color: dimgrey;
 }
