@@ -10,16 +10,17 @@
 
 html, body {
   height: 100%;
-  max-width: 100%;
 }
 
 body {
   background: #fff;
   font-family: Outfit;
+  /* margin-left: 50px; */
+  width: 100%;
 }
 
 .container {
-  max-width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -164,91 +165,104 @@ ul{
 /* ======================Hero======================= */
 
 
-
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 90vh;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: 65px;
-  margin-bottom: 5rem;
-  /* Set the gradient on the container */
+  align-items: center;
+  margin: 2rem 0;
   background: linear-gradient(to right, #93254A, #000B26, #0B454E);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  /* Make sure the background is visible through the text */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* For Firefox */
-  background-clip: text;
-  color: transparent;
 }
 
 .text-content {
-  font-family: "Special Gothic Expanded One";
+  font-family: "Special Gothic Expanded One", sans-serif;
   font-weight: 700;
-  font-size: 4.5em;
+  font-size: clamp(2rem, 8vw, 5rem);
   margin: 0;
-  /* Remove background from text, inherit from parent */
   background: none;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   color: transparent;
 }
-
 
 .line-combo {
   display: flex;
   align-items: baseline;
-  gap: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.with-text{
-  font-family: "Special Gothic Expanded One";
-  font-size: 1.5em;
+.with-text {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: clamp(1rem, 4vw, 2rem);
   margin: 0;
+  background: none;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .titlesection {
-  height: 30vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .titletext {
-  margin-top: 50px;
-  font-family: "Special Gothic Expanded One";
-  font-size: 2em;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: clamp(1.5rem, 6vw, 3rem);
   background: linear-gradient(to right, #93254A, #000B26, #0B454E);
-  background-size: 100% 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
+  margin-top: 2rem;
 }
 
-.titlesection.parallax {
+.titlesection.parallax,
+.hero-text.parallax {
   will-change: transform;
   transition: transform 0.1s ease-out;
   position: relative;
   z-index: 3;
 }
+@media (max-width: 768px) {
+  .hero-text {
 
-.hero-text.parallaxw{
-  will-change: transform;
-  transition: transform 0.1s ease-out;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .line-combo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
 
 
 
@@ -318,6 +332,65 @@ ul{
 .card-animate {
   animation: fadeUp 0.6s ease-out forwards;
 }
+
+@media (max-width: 1024px) {
+  .journey-section {
+    padding: 60px 16px;
+  }
+
+  .journey-title {
+    font-size: 1.75rem;
+    margin-bottom: 60px;
+  }
+
+  .journey-line-wrapper {
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+
+  .journey-card-list {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .journey-card {
+    width: 160px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .journey-section {
+    padding: 50px 12px;
+  }
+
+  .journey-title {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+  }
+
+  .journey-line-wrapper {
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+  }
+
+  .journey-card-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .journey-card {
+    width: 90%;
+    max-width: 300px;
+    padding: 14px;
+  }
+}
+
 
 
 /* ============Marquee============ */
@@ -411,6 +484,42 @@ ul{
   transform: translateY(0);
 }
 
+@media (max-width: 1024px) {
+  .mission-vision {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .mission-vision > div:not(:last-child) {
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .mission, .vision, .history {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mission-vision {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  .mission-vision h3 {
+    font-size: 1.5rem;
+  }
+
+  .mission-vision p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .mission, .vision, .history {
+    padding: 15px 0;
+  }
+}
 
 
 
@@ -496,6 +605,49 @@ ul{
   margin: 0;
   line-height: 1.6;
 }
+
+@media (max-width: 1024px) {
+  .footer-box {
+    grid-template-columns: 1fr;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+  }
+
+  .button-wrapper {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-box {
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.85rem;
+  }
+
+  .button-wrapper button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
 
 
 /*================Gallery=============== */
